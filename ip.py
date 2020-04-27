@@ -6,6 +6,7 @@ import socket
 """
 查询本机ip地址
 :return: ip
+2020年04月27日16:26:45
 """
 def get_host_ip():
     try:
