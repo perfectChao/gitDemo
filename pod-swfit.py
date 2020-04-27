@@ -54,6 +54,14 @@ def git_add_tag():
 	else:
 		print('新建远端tag失败 ----- ❌')
 		exit()
+  
+# 打包framework
+def pod_package_framework():
+    cmd = 'pod package ' + module + '.podspec' + ' --spec-sources=' + repo_source + ' --force --no-mangle'
+    if os.system(cmd):
+        print('framework success')
+    else:
+        print('framework fail')
 
 def git_repo_push():
 	print('🍰🍰🍰 推送spec文件...')
@@ -68,9 +76,10 @@ def git_repo_push():
 		print('推送{},{}失败 ----- ❌'.format(module, tag))
 
 
-git_commit()
-git_update_tag()
-git_repo_push()
+#git_commit()
+#git_update_tag()
+#git_repo_push()
 
+pod_package_framework()
 
 
